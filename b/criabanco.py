@@ -26,7 +26,8 @@ def criaCliente():
         tel				CHAR(11),
         email			VARCHAR(35),
         endereco		VARCHAR(55),
-        PRIMARY KEY (cpf)
+        PRIMARY KEY (cpf),
+        UNIQUE (passaporte)
     )'''
     criar_db(sql)
     
@@ -215,6 +216,7 @@ def criaAcompanhante():
         tel				CHAR(11),
         relacao			VARCHAR(10),
         PRIMARY KEY (cpf),
+        UNIQUE (passaporte),
         FOREIGN KEY (reservaid) REFERENCES RESERVA(idreserva)
             ON UPDATE CASCADE
             ON DELETE CASCADE
